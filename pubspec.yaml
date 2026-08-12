@@ -1,0 +1,46 @@
+name: egg_crack_detector
+description: Aplikasi klasifikasi keretakan cangkang telur ayam berbasis CNN MobileNetV2 (citra candling).
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # Kamera live preview + capture
+  camera: ^0.10.5+9
+
+  # Unggah citra dari galeri
+  image_picker: ^1.0.7
+
+  # Inference model TFLite (MobileNetV2 hasil training)
+  tflite_flutter: ^0.12.1
+
+  # Database lokal untuk riwayat deteksi
+  sqflite: ^2.3.2
+  path: ^1.9.0
+  path_provider: ^2.1.2
+
+  # Format tanggal di halaman riwayat
+  intl: ^0.19.0
+
+  # Image processing (resize/normalize sebelum masuk model)
+  image: ^4.1.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+
+  # Model & label diletakkan di sini. Setelah training selesai,
+  # tinggal timpa file model.tflite dan labels.txt di folder ini.
+  assets:
+    - assets/model/model.tflite
+    - assets/model/labels.txt
