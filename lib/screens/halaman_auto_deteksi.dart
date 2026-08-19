@@ -57,7 +57,7 @@ class _HalamanAutoDeteksiState extends State<HalamanAutoDeteksi>
 
   // ── Konstanta ──
   static const int _requiredFrames = 3;
-  static const double _confidenceThreshold = 0.85;
+  static const double _confidenceThreshold = 0.6;
   static const int _frameIntervalMs = 500;
 
   // Tema warna utama

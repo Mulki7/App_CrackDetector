@@ -84,9 +84,9 @@ class KlasifikasiService {
       finalLabel = finalLabel.toLowerCase() == 'utuh' ? 'Utuh' : 'Retak';
 
       // ========================================================
-      // PERBAIKAN: Filter Threshold di bawah 70% (0.70)
+      // PERBAIKAN: Filter Threshold di bawah 60% (0.60)
       // ========================================================
-      if (finalConfidence < 0.70) {
+      if (finalConfidence < 0.60) {
         return KlasifikasiResult(
           label: 'Tidak Dikenali', // Teks status yang akan muncul di UI
           confidence: finalConfidence,
@@ -146,7 +146,7 @@ class KlasifikasiService {
 
   KlasifikasiResult _hasilPlaceholder() {
     final label = _random.nextBool() ? 'Utuh' : 'Retak';
-    final confidence = 0.70 + _random.nextDouble() * 0.29; // 70-99%
+    final confidence = 0.60 + _random.nextDouble() * 0.29; // 70-99%
     return KlasifikasiResult(
       label: label,
       confidence: confidence,
